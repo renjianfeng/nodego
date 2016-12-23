@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+texearea {resize: none;}
+
+
+body
+{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);/*透明度alpha设置为0，去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚框(Android)*/
+	text-shadow:0px 0px 0px;
+	-webkit-text-size-adjust: none;/*禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化)，此属性也不继承，一般加在body上规定整个body的文字都不会自动调整*/ 
+	-webkit-touch-callout:none;
+	-webkit-overflow-scrolling:touch;/*局部滚动*/
+	-webkit-animation: bannerdonghua 0.5s;
+	animation: bannerdonghua 0.5s;
+}
+input，textarea{outline:none}
+div,img,button,a,font,input,textarea
+{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);/*透明度alpha设置为0，去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚框(Android)*/
+	outline: none;	
+	/*消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 。   注意：不同type的input使用这个属性之后表现不一。text、button无样式，radio、checkbox直接消失*/
+}
+.center
+{
+	width:1000px;
+	margin:0 auto;
+}
+.center_2
+{
+	width:1000px;
+	margin:0 auto;
+}
+.center_3
+{
+	width:1000px;
+	margin:0 auto;
+}
+.cention
+{
+	width:100%;
+	margin:0 auto;
+}
+.now_full
+{
+	color:#F30;
+}
+.f_left
+{
+	float:left;
+}
+.f_right
+{
+	float:right;
+}
+.clear_b
+{
+	clear:both;
+}
+.f_b
+{
+	font-weight:bold;
+}
+.leading_box
+{
+	height:90px;
+	width:240px;
+	margin:0 auto;
+	background-color:#ffb956;
+	border-radius:5px;
+}
+.leading_ico
+{
+	width:120px;
+	height:90px;
+	float:left;
+	background-image:url(../img/m_1343359180629.gif);
+	border-radius:5px;
+}
+.leading_about
+{
+	width:120px;
+	float:left;
+	line-height:90px;
+	text-align:center;
+	color:#FFF;
+}
+.top10
+{
+	margin-top:10px;
+}

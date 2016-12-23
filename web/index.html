@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/diudian.css"/>
+<link rel="stylesheet" type="text/css" href="css/dis_all_clear.css"/>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/window1.css"/>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="assets/layer/layer.js"></script>
+</head>
+<body>
+<div class="windows_box">
+    <div class="top_box">
+    <div class="top">
+    <p id="header" class="header">
+    <span class="window_title">Node<span style="color: #009900">Go</span></span>
+    <span class="title-miaoshu">简单、方便的命令管理工具！</span>
+    </p>
+    </div>
+    <div class="win_check_box">
+    <i class="check_window min_window" title="最小化"></i>
+    <i class="check_window off_window" title="关闭"></i>
+    </div>
+    </div>
+    <div id="cention" class="cention">
+    <div class="row-cell" style="border-bottom: 1px solid #444">
+    <div class="col-2">
+        <div class="add-project-btn" title="新建项目">+</div>
+        <ul class="list-project">
+            <li>React+ES6+Webpack项目</li>
+            <li>SASS编译环境安装</li>
+            <li>LESS编译环境安装</li>
+            <li>nodejs+express+mongodb</li>
+        </ul>
+    </div>
+    <div class="col-8">
+        <div class="gj-nav">
+            <button class="add-code-btn" id="addcode_btn">新增批处理片段</button>
+        </div>
+        <div class="code-cention">
+
+        </div>
+        <div id="consolebox">控制台已准备完成！</div>
+    </div>
+    <div class="col-2 back-right">
+        <div class="win-left-box">
+            <h6 class="win-left-title">项目根目录:</h6>
+            <p class="help-block showfileDialog">还没选择项目根目录0.0</p>
+            <label for="fileDialog" class="change-file-button">修改项目根目录</label>
+            <input id="fileDialog" style="opacity: 0; height: 0px;width: 0px" type="file" nwdirectory />
+
+            <h6 class="win-left-title">在NodeGo上面搜索你需要的脚本:</h6>
+            <div class="row-cell">
+                <div class="col-11">
+                    <input class="text-search" type="text" placeholder="键入名称进行联网搜索！">
+                </div>
+                <div class="col-ela"> <button class="search-button">搜索</button></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="add-code-body" id="add_code_body">
+    <h4 class="title-h4">新增命令片段</h4>
+    <input class="text-input" id="add_gongneng" type="text" placeholder="功能">
+    <textarea class="text-input" id="add_miaoshu" placeholder="描述"></textarea>
+    <textarea class="nodecode" id="add_code" placeholder="着这里输入控制台命令!"></textarea>
+    <div class="radio-box" id="add_codedo">
+        <div class="radio-label-do">
+            <label><input type="radio" name="codedo" value="1">软件控制台输出（不显示执行过程，只显示执行结果。）</label>
+        </div>
+        <div class="radio-label-do">
+            <label><input type="radio" name="codedo" value="2">系统控制台输出（执行完自动关闭！）</label>
+        </div>
+        <div class="radio-label-do">
+            <label><input type="radio" name="codedo" value="3" checked="checked">软件控制台输出（执行完不自动关闭！）</label>
+        </div>
+    </div>
+    <div>
+        <button class="add-code-btn" id="addcode_tojson">添加</button>
+        <button class="save-code-btn" id="exit_addcode">取消</button>
+    </div>
+</div>
+<div class="add-code-body" id="edit_code_body">
+    <h4 class="title-h4">编辑命令片段</h4>
+    <input class="text-input" id="edit_gongneng" type="text" placeholder="功能">
+    <textarea class="text-input" id="edit_miaoshu" placeholder="描述"></textarea>
+    <textarea class="nodecode" id="edit_code" placeholder="着这里输入控制台命令!"></textarea>
+    <div class="radio-box" id="edit_codedo">
+        <div class="radio-label-do">
+            <label><input type="radio" name="codedo2" value="1">软件控制台输出（不显示执行过程，只显示执行结果。）</label>
+        </div>
+        <div class="radio-label-do">
+            <label><input type="radio" name="codedo2" value="2">系统控制台输出（执行完自动关闭！）</label>
+        </div>
+        <div class="radio-label-do">
+            <label><input type="radio" name="codedo2" value="3">软件控制台输出（执行完不自动关闭！）</label>
+        </div>
+    </div>
+    <div>
+        <button class="add-code-btn" id="edit_file_code">添加</button>
+        <button class="save-code-btn" id="exit_editcode">取消</button>
+    </div>
+</div>
+
+<div class="add-code-body" id="add_file">
+    <h4 class="title-h4">新建项目</h4>
+    <input class="text-input" id="add_filename" type="text" placeholder="项目名称">
+    <textarea class="text-input" id="add_filemiaoshu" placeholder="项目描述"></textarea>
+    <p class="help-block showfileDialog2">还没选择项目根目录0.0</p>
+    <label for="fileDialog2" class="change-file-button">修改项目根目录</label>
+    <input id="fileDialog2" style="opacity: 0; height: 0px;width: 0px" type="file" nwdirectory />
+    <div style="margin-top: 20px">
+        <button class="add-code-btn" id="new_file">创建</button>
+        <button class="save-code-btn" id="exit_file">取消</button>
+    </div>
+
+</div>
+</body>
+<script src="js/model.js"></script>
+<script src="js/dom.js"></script>
+<script src="js/main.js"></script>
+</html>

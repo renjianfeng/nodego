@@ -1,0 +1,366 @@
+/* CSS Document */
+        body {
+			background: rgba(255,255,255,0);
+			-webkit-user-select: none;
+			font-family:"微软雅黑";
+			word-break: break-all;
+            overflow: hidden;
+        }
+		.windows_box
+		{
+			background-color:#f9f9f9;
+			border:1px solid #444;
+		}
+		/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+	height:8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background:#CDCDCD;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: rgba(255,255,255,0.4); 
+}
+.top_box
+{
+	background-color:#444;
+	display:-webkit-box;
+}
+		.top
+		{
+			background-color:#444;
+			-webkit-box-flex:1;
+		}
+		.header
+		{
+			-webkit-user-select: none;
+            -webkit-app-region: drag;
+            width:100%;
+			height:33px;
+			line-height:30px;
+			color:#fff;
+			text-indent:10px;
+		}
+		.header i
+		{
+			width:30px;
+			height:30px;
+			background-repeat:no-repeat;
+			margin:0px;
+		}
+		.check_window
+		{
+			width:30px;
+			height:30px;
+			background-repeat:no-repeat;
+			display:inline-block;
+			margin:1px;
+			padding:0px;
+			margin-left:-2px;
+			background-color:#444;
+			-webkit-user-select: none;
+		}
+		.check_window:hover
+		{
+			background-color:#ccc;
+		}
+		.off_window
+		{
+			background-image:url(../img/panel_tools.png);
+			background-position:9px 9px;
+			
+		}
+		.off_window:hover{
+			background-color: red;
+		}
+		.min_window
+		{
+			background-image:url(../img/zxh.png);
+			background-position:9px 19px;
+			
+		}
+		.sx_window
+		{
+			background-image:url(../img/shuaxin.png);
+			background-position:7px 7px;
+		}
+		.win_check_box
+		{
+			width:97px;
+			height:30px;
+			text-align:right;
+		}
+		.cention
+		{
+			width:100%;
+			overflow-x:hidden ;
+			overflow-y:hidden ;
+			background-color:#FFF;
+			padding-bottom:2px;
+			border-bottom: 1px solid #444;
+
+		}
+		.cention_src
+		{
+			width:100%;
+			height:100%;
+			border:0px;
+		}
+		.loading
+		{
+			width:120px;
+			height:30px;
+			line-height:30px;
+			color:#FFF;
+			background-color:#F60;
+			border-radius:3px;
+			text-align:center;
+			margin:0 auto;
+			position:fixed;
+			left:50%;
+			top:50%;
+			margin-top:-15px;
+			margin-left:-60px;
+			background-image:url(../img/043.gif);
+			background-repeat:no-repeat;
+			background-position:15px 7px;
+			display:none;
+		}
+		.window_ico
+		{
+			display:inline-block;
+			width:22px;
+			height:20px;
+			
+			position:relative;
+			float:left;
+			top:5px;
+			left:10px;
+		}
+
+
+
+		/*nodego*/
+#consolebox{
+	color: #fff;
+	font-size: 12px;
+	background: #4D4D4D;
+	padding: 10px;
+	height: 108px;
+	overflow: auto;
+	border-top: 2px solid #ccc;
+	-webkit-user-select: text !important;
+}
+.nodecode{
+	display: block;
+	padding: 10px;
+	color: #fff;
+	background: #444;
+	resize: none;
+	font-size: 12px;
+	width: 100%;
+	border:1px solid #444;
+	height: 150px;
+}
+.nodego{
+	width: 100px;
+	height: 150px;
+	border:0px solid;
+	background: #00af62;
+	color: #fff;
+}
+.win-left-box{
+	padding: 5px;
+}
+.change-file-button{
+	cursor: pointer;
+	background: #444;
+	padding: 6px 10px;
+	text-align: center;
+	border-radius: 5px;
+	color:#fff;
+	box-shadow: 0px 0px 5px #444;
+	display: block;
+}
+.help-block{
+	margin-top: 0px;
+	padding: 3px;
+	background: #ccc;
+	color: #fff;
+	margin-top: 5px;
+	font-size: 12px;
+}
+.add-project-btn{
+	display: block !important;
+	margin: 5px;
+	border:1px solid #99cccb;
+	background: #fff;
+	text-align: center;
+	font-size: 30px;
+	cursor: pointer;
+	background: #99cccb;
+	color: #fff;
+}
+.list-project{
+	padding: 5px;
+}
+.list-project li{
+	display: block;
+	height: 30px;
+	margin: 5px 0;
+	padding: 0 10px;
+	background: #ccc;
+	line-height: 30px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.list-project .check-li{
+	background: #666 !important;
+	color: #fff;
+}
+.list-project li:hover{
+	background: #444;
+	color: #fff;
+}
+.code-cention{
+	height: 421px;
+	background: #e7e7e7;
+	padding: 10px;
+	overflow: auto;
+
+}
+button:hover{
+	opacity: 0.8;
+}
+.back-right{
+	background: #737373;
+}
+.title-h4{
+	padding: 5px 0;
+	border-bottom: 1px solid #ccc;
+}
+.add-code-btn{
+	background: rgb(0, 175, 98);
+	border:0px solid;
+	border-radius: 7px;
+	padding: 5px 10px;
+	color: #fff;
+	box-shadow: 0px 0px 10px #999;
+}
+.save-code-btn{
+	background: rgb(207, 141, 55);
+	border:0px solid;
+	border-radius: 7px;
+	padding: 5px 10px;
+	color: #fff;
+	box-shadow: 0px 0px 10px #999;
+}
+.edit-code-btn{
+	background: rgb(62, 182, 207);
+	border:0px solid;
+	border-radius: 7px;
+	padding: 5px 10px;
+	color: #fff;
+	box-shadow: 0px 0px 10px #999;
+}
+.gj-nav{
+	margin: 5px;
+}
+.code-list{
+	margin: 10px 0;
+	padding: 5px;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #999;
+}
+.window_title{
+	font-size: 15px;
+	font-weight: bold;
+}
+.title-miaoshu{
+	font-size: 12px;
+	color: #7e7e7e;
+	padding-left: 20px;
+}
+
+/*弹出层*/
+.add-code-bg{
+	-webkit-filter: blur(4px);
+}
+.code-showbody{
+	margin-top: 0px !important;
+	-webkit-transition: 1s;
+}
+.add-code-body{
+	margin-top: -1400px;
+	-webkit-transition: 1s;
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	padding: 30px;
+}
+.add-code-body ::-webkit-input-placeholder  {
+	color:#ccc !important;
+}
+.add-code-body .nodecode{
+	background: rgba(0,0,0,0.4);
+}
+.add-code-body .title-h4{
+
+}
+.radio-label-do{
+	padding: 5px;
+}
+.radio-label-do input[type="radio"]{
+	vertical-align: middle;
+}
+.text-input{
+	display: block;
+	width: 100%;
+	background: rgba(0,0,0,0.4);
+	border:0px solid;
+	padding: 10px;
+	margin-bottom: 5px;
+	resize: none;
+}
+.text-search{
+	display: block;
+	width: 100%;
+	border:0px solid;
+	padding: 8px;
+	resize: none;
+	border-radius: 5px 0px 0px 5px;
+}
+.radio-box{
+	margin: 10px 0;
+}
+.search-button{
+	cursor: pointer;
+	background: #444;
+	padding: 8px 20px;
+	text-align: center;
+	border-radius: 0px 5px 5px 0px;
+	border:0px solid;
+	color:#fff;
+	box-shadow: 0px 0px 5px #444;
+	display: block;
+	width: 70px;
+}
+.win-left-title{
+	color: #ccc;
+}

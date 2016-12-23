@@ -1,0 +1,23 @@
+{
+
+    "name": "nw-demo",
+
+    "main": "web/index.html",
+   
+    "nodejs": true,
+
+    "window": {
+
+        "frame": false,
+
+        "toolbar": false,
+
+        "width": 910,
+
+        "height": 610,
+	
+	"transparent": true
+
+    }
+
+}

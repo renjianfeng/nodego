@@ -167,17 +167,17 @@
 
 
         cmdJson.lsit[idit_index]={
-            "titleh1": "",
-            "titleh2": "",
-            "cmdcode": "",
-            "cmddo": "3"
+            "titleh1": $("#edit_gongneng").val(),
+            "titleh2": $("#edit_miaoshu").val(),
+            "cmdcode": $("#edit_code").val(),
+            "cmddo": $('#add_codedo input[name="codedo"]:checked ').val()
         };
 
         //将代码保存到本地
         fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
             if (err) throw err;
         });
-        $("#add_code_body").removeClass("code-showbody");
+        $("#edit_code_body").removeClass("code-showbody");
         $(".windows_box").removeClass("add-code-bg");
         htmlDom(cmdJson);
         layer.msg('保存成功！');

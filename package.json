@@ -4,8 +4,8 @@
   "nodejs": true,
   "iconv-lite": true,
   "window": {
-    "frame": true,
-    "toolbar": true,
+    "frame": false,
+    "toolbar": false,
     "width": 910,
     "height": 610,
     "transparent": false

@@ -9,14 +9,17 @@
         cmdJson=fs.readFileSync(fileThis);
         cmdJson=JSON.parse(cmdJson)
     }   catch  (e)   {
-        alert("文件不存在");
+        alert("文件路径不正确或文件编译出错！");
     }
     $(document).ready(function(e) {
         $(".code-cention").height($(window).height()-201);
         $(".cention").height($(window).height());
+        $("#edit_jsontext").height($(window).height()-200);
         window.onresize=function(){
             $(".code-cention").height($(window).height()-201);
             $(".cention").height($(window).height());
+            $("#edit_jsontext").height($(window).height()-200);
+
         }
 
         var sval=$(".nodecode").html();
@@ -256,6 +259,29 @@
         $("#add_file").addClass("code-showbody");
         $(".windows_box").addClass("add-code-bg")
     })
+
+//编辑json文件窗口
+
+    $(document).on("click","#editjson_btn",function(){
+        $("#edit_json").addClass("code-showbody");
+        $(".windows_box").addClass("add-code-bg")
+        $("#json_filename").html(fileName)
+        $("#edit_jsontext").val(JSON.stringify(cmdJson, null, 4))
+    })
+
+    $(document).on("click","#edit_jsonback",function(){
+        $("#edit_json").removeClass("code-showbody");
+        $(".windows_box").removeClass("add-code-bg");
+        var newJson=$("#edit_jsontext").val()
+        cmdJson=JSON.parse(newJson)
+        fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
+            if (err) throw err;
+        });
+        htmlDom(cmdJson);
+        layer.msg('保存成功！');
+    })
+
+
 //删除批处理片段
     $(document).on("click",".delete-code-list",function(){
 

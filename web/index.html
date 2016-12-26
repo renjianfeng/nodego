@@ -37,6 +37,7 @@
     <div class="col-8">
         <div class="gj-nav">
             <button class="add-code-btn" id="addcode_btn">新增批处理片段</button>
+            <button class="add-code-btn" id="editjson_btn">编辑.JSON文件</button>
         </div>
         <div class="code-cention">
 
@@ -50,7 +51,7 @@
             <label for="fileDialog" class="change-file-button">修改项目根目录</label>
             <input id="fileDialog" style="opacity: 0; height: 0px;width: 0px" type="file" nwdirectory />
 
-            <h6 class="win-left-title">在NodeGo上面搜索你需要的脚本:</h6>
+            <h6 class="win-left-title">在NodeGo线上仓库中搜索你需要的脚本:</h6>
             <div class="row-cell">
                 <div class="col-11">
                     <input class="text-search" type="text" placeholder="键入名称进行联网搜索！">
@@ -75,7 +76,7 @@
             <label><input type="radio" name="codedo" value="2">系统控制台输出（执行完自动关闭！）</label>
         </div>
         <div class="radio-label-do">
-            <label><input type="radio" name="codedo" value="3" checked="checked">软件控制台输出（执行完不自动关闭！）</label>
+            <label><input type="radio" name="codedo" value="3" checked="checked">系统控制台输出（执行完不自动关闭！）</label>
         </div>
     </div>
     <div>
@@ -96,7 +97,7 @@
             <label><input type="radio" name="codedo2" value="2">系统控制台输出（执行完自动关闭！）</label>
         </div>
         <div class="radio-label-do">
-            <label><input type="radio" name="codedo2" value="3">软件控制台输出（执行完不自动关闭！）</label>
+            <label><input type="radio" name="codedo2" value="3">系统控制台输出（执行完不自动关闭！）</label>
         </div>
     </div>
     <div>
@@ -116,7 +117,14 @@
         <button class="add-code-btn" id="new_file">创建</button>
         <button class="save-code-btn" id="exit_file">取消</button>
     </div>
+</div>
 
+<div class="add-code-body" id="edit_json">
+    <h4 class="title-h4">编辑“<span id="json_filename"></span>”文件</h4>
+    <textarea class="nodecode" id="edit_jsontext" placeholder="json文件内容区域"></textarea>
+    <div style="margin-top: 20px">
+        <button class="save-code-btn" id="edit_jsonback">保存并返回主窗口</button>
+    </div>
 </div>
 </body>
 <script src="js/model.js"></script>

@@ -2,7 +2,7 @@
     "name": "SASS编译环境",
     "description": "用于SASS编译环境安装、运行、输出配置！",
     "fileaddress": "C:\\Users\\dell4\\Desktop\\cmd\\blions-clean-provider\\bin",
-    "lsit": [
+    "list": [
         {
             "titleh1": "SASS安装",
             "titleh2": "通过npm的方式安装sass命令！",

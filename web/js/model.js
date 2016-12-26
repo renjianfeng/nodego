@@ -84,17 +84,17 @@ function htmlDom(cmdJson){
     strVar += " <h4 class=\"title-h4\">"+cmdJson.name+"<\/h4>";
     strVar += "                <h5>"+cmdJson.description+"<\/h5>";
     strVar += "                <div>";
-    for(var i=0;i<cmdJson.lsit.length;i++){
+    for(var i=0;i<cmdJson.list.length;i++){
         strVar += "                <div class=\"code-list\">";
         strVar += "                <div class=\"text-right\">";
         strVar += "               <button class=\"edit-code-btn edit_code_do\">编辑<\/button>";
         strVar += "               <button class=\"save-code-btn delete-code-list\">删除<\/button>";
         strVar += "                    <\/div>";
-        strVar += "                    <h5>"+cmdJson.lsit[i].titleh1+"<\/h5>";
-        strVar += "                    <h6>"+cmdJson.lsit[i].titleh2+"<\/h6>";
+        strVar += "                    <h5>"+cmdJson.list[i].titleh1+"<\/h5>";
+        strVar += "                    <h6>"+cmdJson.list[i].titleh2+"<\/h6>";
         strVar += "                    <div class=\"row-cell\">";
         strVar += "                        <div class=\"col-ela\">";
-        strVar += "                            <textarea class=\"nodecode\" placeholder=\"着这里输入控制台命令!\">"+cmdJson.lsit[i].cmdcode+"<\/textarea>";
+        strVar += "                            <textarea class=\"nodecode\" placeholder=\"着这里输入控制台命令!\">"+cmdJson.list[i].cmdcode+"<\/textarea>";
         strVar += "                        <\/div>";
         strVar += "                        <div class=\"col-ela\" style=\"width: 100px\">";
         strVar += "                            <button class=\"nodego\">运行<\/button>";

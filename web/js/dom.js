@@ -44,13 +44,13 @@
                 var _index=$(this).parents(".code-list").index()
                 // alert(cmdstr+_pan)
 
-                if(cmdJson.lsit[_index].cmddo=="1"){
+                if(cmdJson.list[_index].cmddo=="1"){
                     //使用nodeGO控制台打印
                     nodeGo(cmdstr+_pan+$(".nodecode:eq("+_index+")").val());
-                }else if(cmdJson.lsit[_index].cmddo=="2"){
+                }else if(cmdJson.list[_index].cmddo=="2"){
                     //使用系统默认控制台打印（执行后关闭）
                     shelldo(cmdstr+_pan+$(".nodecode:eq("+_index+")").val());
-                }else if(cmdJson.lsit[_index].cmddo=="3"){
+                }else if(cmdJson.list[_index].cmddo=="3"){
                     //使用系统默认控制台打印（执行后不关闭）
                     shelldocall(cmdstr+_pan+$(".nodecode:eq("+_index+")").val());
                 }
@@ -123,7 +123,7 @@
         var code=$("#add_code").val();
         var codedo=$('#add_codedo input[name="codedo"]:checked ').val();
 
-        cmdJson.lsit[cmdJson.lsit.length]={
+        cmdJson.list[cmdJson.list.length]={
             "titleh1":gongneng,
             "titleh2":miaoshu,
             "cmdcode":code,
@@ -147,7 +147,7 @@
     $(document).on("click",".edit_code_do",function(){
 
         var _index=$(this).parents(".code-list").index();
-        var _list=cmdJson.lsit[_index];
+        var _list=cmdJson.list[_index];
         idit_index=_index;
 
         console.log(_list)
@@ -166,11 +166,11 @@
     $(document).on("click","#edit_file_code",function(){
 
 
-        cmdJson.lsit[idit_index]={
+        cmdJson.list[idit_index]={
             "titleh1": $("#edit_gongneng").val(),
             "titleh2": $("#edit_miaoshu").val(),
             "cmdcode": $("#edit_code").val(),
-            "cmddo": $('#add_codedo input[name="codedo"]:checked ').val()
+            "cmddo": $('#edit_codedo input[name="codedo2"]:checked ').val()
         };
 
         //将代码保存到本地
@@ -193,7 +193,7 @@
             "name":filename,
             "description":filemiaoshu,
             "fileaddress":addressF,
-            "lsit":[]
+            "list":[]
         }
         fs.writeFile('file_data/'+filename+".json", JSON.stringify(newcmdJson, null, 4), function (err) {
             if (err) throw err;
@@ -280,7 +280,7 @@
             ,yes: function(index, layero){
                 layer.close(index)
                 var _index=$(this).parents(".code-list").index();
-                cmdJson.lsit.splice(_index,1);
+                cmdJson.list.splice(_index,1);
                 fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
                     if (err) throw err;
                 });

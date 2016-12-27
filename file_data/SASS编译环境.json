@@ -1,12 +1,37 @@
 {
+    "_id": "5862401fe2c9a63b7cb88ac4",
     "name": "SASS编译环境",
     "description": "用于SASS编译环境安装、运行、输出配置！",
-    "fileaddress": "C:\\Users\\dell4\\Desktop\\cmd\\blions-clean-provider\\bin",
+    "fileaddress": "F:\\web-view\\testnode",
     "list": [
         {
-            "titleh1": "SASS安装",
-            "titleh2": "通过npm的方式安装sass命令！",
-            "cmdcode": "npm install sass -save",
+            "titleh1": "1.安装ruby",
+            "titleh2": "下载链接如下，请复制到浏览器中下载安装！",
+            "cmdcode": "https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.3.3-x64.exe\n##提示该命令行运行无效！",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "2.检测ruby是否安装成功！",
+            "titleh2": "",
+            "cmdcode": "ruby -v",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "3.通过Gem安装Compass+Sass",
+            "titleh2": "",
+            "cmdcode": "gem install sass",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "4.将sass文件编译成css",
+            "titleh2": "将”demo1.scss“编译成”demo1.css “！",
+            "cmdcode": "sass demo1.scss demo1.css",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "5.自动监听文件变化",
+            "titleh2": "将”demo1.scss“编译成”demo1.css “,并开启实时监听变化！",
+            "cmdcode": "sass –watch demo1.scss:demo1.css ",
             "cmddo": "3"
         }
     ]

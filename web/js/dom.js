@@ -15,11 +15,12 @@
         $(".code-cention").height($(window).height()-201);
         $(".cention").height($(window).height());
         $("#edit_jsontext").height($(window).height()-200);
+        $(".search-box").height($(window).height()-200);
         window.onresize=function(){
             $(".code-cention").height($(window).height()-201);
             $(".cention").height($(window).height());
             $("#edit_jsontext").height($(window).height()-200);
-
+            $(".search-box").height($(window).height()-200);
         }
 
         var sval=$(".nodecode").html();
@@ -55,7 +56,7 @@
                     shelldo(cmdstr+_pan+$(".nodecode:eq("+_index+")").val());
                 }else if(cmdJson.list[_index].cmddo=="3"){
                     //使用系统默认控制台打印（执行后不关闭）
-                    shelldocall(cmdstr+_pan+$(".nodecode:eq("+_index+")").val());
+                    shelldocall(cmdstr+_pan+"\n\n"+$(".nodecode:eq("+_index+")").val());
                 }
             }
 
@@ -116,6 +117,10 @@
     $(document).on("click","#addcode_btn",function(){
         $("#add_code_body").addClass("code-showbody");
         $(".windows_box").addClass("add-code-bg")
+        $("#add_gongneng").val("");
+        $("#add_miaoshu").val("");
+        $("#add_code").val("");
+        $('#add_code input[value="1"]').attr("checked","checked");
     })
 
 
@@ -258,6 +263,8 @@
     $(document).on("click",".add-project-btn",function(){
         $("#add_file").addClass("code-showbody");
         $(".windows_box").addClass("add-code-bg")
+        $("#add_filename").val("");
+        $("#add_filemiaoshu").val("");
     })
 
 //编辑json文件窗口

@@ -58,9 +58,9 @@ function nodeGo(cmdstr1){
                  console.log('报错: ' + error);
                  }*/
                 if (stdout !== null) {
-                    /* console.log('SUCCESS: ' + stdout);
+                     console.log('SUCCESS: ' + stdout);
                      stdout=stdout.replace(/\n/g,"<br/>");
-                     $("#consolebox").append("<div style='color: #fff;'>"+stdout+"</div>")*/
+                     $("#consolebox").append("<div style='color: #fff;'>"+stdout+"</div>")
                     if (stderr.length!=0) {
                         console.log('ERROR: ' + stderr);
                         stderr=stderr.replace(/\n/g,"<br/>");
@@ -119,6 +119,7 @@ function shelldo(cmdstr1){
 
 //通过系统控制塔打印，执行完不自动关闭
 function shelldocall(cmdstr1){
+    console.log(cmdstr1)
     // "\n cmd /k"
     $("#consolebox").append("<div style='color: yellow;'>该命令使用系统默认控制台打印！</div>");
     $("#consolebox").scrollTop(300000000000);

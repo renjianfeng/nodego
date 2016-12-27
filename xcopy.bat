@@ -1,6 +1,9 @@
 chcp 65001
  cd \ 
-E:
-cd 
-cd ..
-f:
+F:
+cd web-view\node_service
+
+
+node app.js
+
+

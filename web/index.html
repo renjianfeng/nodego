@@ -54,7 +54,7 @@
             <h6 class="win-left-title">在NodeGo线上仓库中搜索你需要的脚本:</h6>
             <div class="row-cell">
                 <div class="col-11">
-                    <input class="text-search" type="text" placeholder="键入名称进行联网搜索！">
+                    <input class="text-search" id="index_search" type="text" placeholder="键入名称进行联网搜索！">
                 </div>
                 <div class="col-ela"> <button class="search-button">搜索</button></div>
             </div>
@@ -126,8 +126,20 @@
         <button class="save-code-btn" id="edit_jsonback">保存并返回主窗口</button>
     </div>
 </div>
+<div class="add-code-body" id="search_json">
+    <h4 class="title-h4">NodeGo线上仓库</h4>
+    <h6>温馨提示：批处理涉及的操作可能较多!请您再使用时注意分辨风险较大的脚本，避免对您的项目造成损失！</h6>
+    <input class="text-input" id="search_jsonname" type="text" placeholder="键入项目名称便于快速索引！">
+    <div class="search-box">
+        <ul>
+            <li>列表</li>
+        </ul>
+    </div>
+    <button class="save-code-btn" id="exit_search">关闭搜索窗口</button>
+</div>
 </body>
 <script src="js/model.js"></script>
 <script src="js/dom.js"></script>
+<script src="js/web.js"></script>
 <script src="js/main.js"></script>
 </html>

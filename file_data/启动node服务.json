@@ -1,0 +1,13 @@
+{
+    "name": "启动node服务",
+    "description": "",
+    "fileaddress": "F:\\web-view\\node_service",
+    "list": [
+        {
+            "titleh1": "启动",
+            "titleh2": "",
+            "cmdcode": "node app.js",
+            "cmddo": "3"
+        }
+    ]
+}

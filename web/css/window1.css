@@ -364,3 +364,20 @@ button:hover{
 .win-left-title{
 	color: #ccc;
 }
+.search-box{
+	display: block;
+	width: 100%;
+	background: rgba(0,0,0,0.4);
+	border:0px solid;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+.search-box ul li{
+	padding: 5px;
+	border-bottom: 1px solid #fff;
+	cursor: pointer;
+}
+.search-box ul li:hover{
+	background: #fff;
+	color: #444;
+}

@@ -17,5 +17,6 @@
         });
         fileName=files[0];
         dom(fileName)
+        web(fileName)
     })
 })()

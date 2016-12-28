@@ -46,6 +46,12 @@
     </div>
     <div class="col-2 back-right">
         <div class="win-left-box">
+            <div class="login-box">
+                <ul>
+                    <li id="login-model">登录</li>
+                    <li id="reg-model">注册</li>
+                </ul>
+            </div>
             <h6 class="win-left-title">项目根目录:</h6>
             <p class="help-block showfileDialog">还没选择项目根目录0.0</p>
             <label for="fileDialog" class="change-file-button">修改项目根目录</label>
@@ -136,6 +142,21 @@
         </ul>
     </div>
     <button class="save-code-btn" id="exit_search">关闭搜索窗口</button>
+</div>
+<div class="add-code-body" id="login_box">
+    <h4 class="title-h4">用户登录</h4>
+    <input class="text-input" id="login_name" type="text" placeholder="账号">
+    <input class="text-input" id="login_pwd" type="password" placeholder="密码">
+    <button class="add-code-btn" id="login_btn">登录</button>
+    <button class="save-code-btn" id="login_exit">关闭登录窗口</button>
+</div>
+<div class="add-code-body" id="reg_box">
+    <h4 class="title-h4">用户注册</h4>
+    <input class="text-input" maxlength="15" id="reg_name" type="text" placeholder="账号">
+    <input class="text-input" maxlength="15" id="reg_pwd" type="password" placeholder="密码">
+    <input class="text-input" maxlength="15" id="nextreg_pwd" type="password" placeholder="再次输入密码">
+    <button class="add-code-btn" id="reg_btn">注册</button>
+    <button class="save-code-btn" id="reg_exit">关闭注册窗口</button>
 </div>
 </body>
 <script src="js/model.js"></script>

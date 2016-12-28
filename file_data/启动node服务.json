@@ -8,6 +8,12 @@
             "titleh2": "",
             "cmdcode": "node app.js",
             "cmddo": "3"
+        },
+        {
+            "titleh1": "安装md5模块",
+            "titleh2": "",
+            "cmdcode": "npm install md5 -save",
+            "cmddo": "2"
         }
     ]
 }

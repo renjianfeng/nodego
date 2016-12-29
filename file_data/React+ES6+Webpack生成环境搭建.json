@@ -1,20 +1,19 @@
 {
-    "_id": "5861f4fbe673eb37d0b73bf5",
-    "name": "React+ES6+Webpack生成环境搭建new",
+    "name": "React+ES6+Webpack生成环境搭建",
     "description": "介绍",
     "fileaddress": "F:\\web-view\\testnode",
     "list": [
         {
             "titleh1": "阿斯达四大",
             "titleh2": "阿斯达四大",
-            "cmdcode": "阿斯达四大阿斯达",
+            "cmdcode": "阿斯达四",
             "cmddo": "1"
         },
         {
             "titleh1": "阿斯达四大dddd",
-            "titleh2": "",
+            "titleh2": "发货个哈哈",
             "cmdcode": "水电费水电费",
-            "cmddo": "3"
+            "cmddo": "1"
         },
         {
             "titleh1": "阿斯达四大",

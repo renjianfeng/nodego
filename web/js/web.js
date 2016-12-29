@@ -2,18 +2,19 @@
  * Created by dell4 on 2016/12/26.
  */
 function web(fileName){
+    var bodydom=$(".cention")
     var _url="http://127.0.0.1:8100"
     ajaxUser()
     $("#index_search").click(function(){
         $("#search_json").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg");
+        bodydom.addClass("add-code-bg");
         $("#search_jsonname").focus();
         $("#search_jsonname").val($(this).val());
         ajaxSearch()
     })
     $("#exit_search").click(function(){
         $("#search_json").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
     })
 
     $("#search_jsonname").keyup(function(){
@@ -21,27 +22,26 @@ function web(fileName){
     })
     $("#login-model").click(function(){
         $("#login_box").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg");
+        bodydom.addClass("add-code-bg");
     })
     $("#login_exit").click(function(){
         $("#login_box").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
     })
 
     $("#reg-model").click(function(){
         $("#reg_box").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg");
+        bodydom.addClass("add-code-bg");
     })
     $("#reg_exit").click(function(){
         $("#reg_box").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
     })
 
 
     $(document).on("click",".exit-login-btn",function(){
         exitLogin()
     })
-
 
 
     //登录
@@ -104,6 +104,9 @@ function web(fileName){
 
 
 
+
+
+
     $(document).on("click",".search-box ul li",function(){
         $.ajax({
             url: _url+"/search_id",
@@ -117,6 +120,7 @@ function web(fileName){
                 console.log(data)
                 cmdJson=data[0];
                 $("#exit_search").click();
+                delete data[0]._id;
                 fs.writeFile('file_data/'+data[0].name+'.json', JSON.stringify(cmdJson, null, 4), function (err) {
                     if (err) throw err;
                 });

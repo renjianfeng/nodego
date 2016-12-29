@@ -9,6 +9,7 @@ var shell = gui.Shell;
 //引入node.js本地应用插件，文件读写对象
 var fs = require('fs');
 var win = gui.Window.get();
+
 onload = function() {
     gui.Window.get().show();
 }
@@ -17,11 +18,9 @@ onload = function() {
 //遍历左侧目录
 function navlist(){
     fs.readdir('file_data', function (err, files) {
-
         if (err) {
             console.log('读取目录失败')
         }
-
         //对文件进行排序
         files.sort(function(val1, val2){
             //读取文件信息
@@ -30,18 +29,19 @@ function navlist(){
             //根据时间从最新到最旧排序
             return stat2.mtime - stat1.mtime;
         });
-
         //这个时候的files就是排序之后的，前三个一定是最新的，
         var list=""
         for(var i=0;i<files.length;i++){
+            files[i]=removeLastOne(files[i])
             list+="<li>"+files[i]+"</li>"
         }
         $(".list-project").html(list)
-
     })
 }
 
-
+function removeLastOne(str){
+    return str.substring(0,str.length - 5);
+}
 
 //通过软件控制台打印
 function nodeGo(cmdstr1){

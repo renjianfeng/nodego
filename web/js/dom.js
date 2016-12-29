@@ -3,9 +3,11 @@
  */
 
     function dom(fileName){
+    var _url="http://127.0.0.1:8100"
+    var bodydom=$(".cention")
     var cmdJson;
     try {
-        var fileThis="file_data/"+fileName;
+        var fileThis="file_data/"+fileName+".json";
         cmdJson=fs.readFileSync(fileThis);
         cmdJson=JSON.parse(cmdJson)
     }   catch  (e)   {
@@ -15,12 +17,12 @@
         $(".code-cention").height($(window).height()-201);
         $(".cention").height($(window).height());
         $("#edit_jsontext").height($(window).height()-200);
-        $(".search-box").height($(window).height()-200);
+        $(".search-box").height($(window).height()-230);
         window.onresize=function(){
             $(".code-cention").height($(window).height()-201);
             $(".cention").height($(window).height());
             $("#edit_jsontext").height($(window).height()-200);
-            $(".search-box").height($(window).height()-200);
+            $(".search-box").height($(window).height()-230);
         }
 
         var sval=$(".nodecode").html();
@@ -102,7 +104,7 @@
         if(filedo){
             cmdJson.fileaddress=chooser;
             //将代码保存到本地
-            fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
+            fs.writeFile('file_data/'+fileName+".json", JSON.stringify(cmdJson, null, 4), function (err) {
                 if (err) throw err;
             });
         }
@@ -111,12 +113,12 @@
 
     $(document).on("click","#exit_addcode",function(){
         $("#add_code_body").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg")
+        bodydom.removeClass("add-code-bg")
     })
 
     $(document).on("click","#addcode_btn",function(){
         $("#add_code_body").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg")
+        bodydom.addClass("add-code-bg")
         $("#add_gongneng").val("");
         $("#add_miaoshu").val("");
         $("#add_code").val("");
@@ -140,11 +142,11 @@
         //console.log(cmdJson)
 
         //将代码保存到本地
-        fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
+        fs.writeFile('file_data/'+fileName+".json", JSON.stringify(cmdJson, null, 4), function (err) {
             if (err) throw err;
         });
         $("#add_code_body").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
         htmlDom(cmdJson);
         layer.msg('添加成功！');
 
@@ -182,11 +184,11 @@
         };
 
         //将代码保存到本地
-        fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
+        fs.writeFile('file_data/'+fileName+".json", JSON.stringify(cmdJson, null, 4), function (err) {
             if (err) throw err;
         });
         $("#edit_code_body").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
         htmlDom(cmdJson);
         layer.msg('保存成功！');
     })
@@ -207,7 +209,7 @@
             if (err) throw err;
         });
         $("#add_file").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
         navlist()
         layer.msg('创建成功！');
     })
@@ -219,7 +221,8 @@
         $(this).addClass("check-li")
         fileName=$(this).html();
         try    {
-            var fileThis="file_data/"+fileName;
+
+            var fileThis="file_data/"+fileName+".json";
             cmdJson=fs.readFileSync(fileThis);
             cmdJson=JSON.parse(cmdJson)
         }   catch  (e)   {
@@ -232,12 +235,12 @@
 //新建命令窗口
     $(document).on("click","#exit_editcode",function(){
         $("#edit_code_body").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg")
+        bodydom.removeClass("add-code-bg")
     })
 
     $(document).on("click",".edit_code_do",function(){
         $("#edit_code_body").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg")
+        bodydom.addClass("add-code-bg")
     })
 
 
@@ -245,24 +248,24 @@
 //编辑命令窗口
     $(document).on("click","#exit_editcode",function(){
         $("#edit_code_body").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg")
+        bodydom.removeClass("add-code-bg")
     })
 
     $(document).on("click",".edit_code_do",function(){
         $("#edit_code_body").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg")
+        bodydom.addClass("add-code-bg")
     })
 
 
 //新建项目窗口
     $(document).on("click","#exit_file",function(){
         $("#add_file").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg")
+        bodydom.removeClass("add-code-bg")
     })
 
     $(document).on("click",".add-project-btn",function(){
         $("#add_file").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg")
+        bodydom.addClass("add-code-bg")
         $("#add_filename").val("");
         $("#add_filemiaoshu").val("");
     })
@@ -271,17 +274,17 @@
 
     $(document).on("click","#editjson_btn",function(){
         $("#edit_json").addClass("code-showbody");
-        $(".windows_box").addClass("add-code-bg")
-        $("#json_filename").html(fileName)
+        bodydom.addClass("add-code-bg")
+        $("#json_filename").html(fileName+".json")
         $("#edit_jsontext").val(JSON.stringify(cmdJson, null, 4))
     })
 
     $(document).on("click","#edit_jsonback",function(){
         $("#edit_json").removeClass("code-showbody");
-        $(".windows_box").removeClass("add-code-bg");
+        bodydom.removeClass("add-code-bg");
         var newJson=$("#edit_jsontext").val()
         cmdJson=JSON.parse(newJson)
-        fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
+        fs.writeFile('file_data/'+fileName+".json", JSON.stringify(cmdJson, null, 4), function (err) {
             if (err) throw err;
         });
         htmlDom(cmdJson);
@@ -292,6 +295,7 @@
 //删除批处理片段
     $(document).on("click",".delete-code-list",function(){
 
+        var _this=$(this)
         var index=layer.open({
             type: 1
             ,title: false //不显示标题栏
@@ -301,7 +305,7 @@
             ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
             ,btn: ['确认删除', '取消']
             ,moveType: 1 //拖拽模式，0或者1
-            ,content: '<div style="padding: 20px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">您确认要删除该条执行代码片段吗？（不可恢复）</div>'
+            ,content: '<div style="padding: 20px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">您确认要删除该条执行代码片段吗？</div>'
             ,success: function(layero){
                 var btn = layero.find('.layui-layer-btn');
                 btn.css('text-align', 'center');
@@ -312,9 +316,9 @@
             }
             ,yes: function(index, layero){
                 layer.close(index)
-                var _index=$(this).parents(".code-list").index();
+                var _index=_this.parents(".code-list").index();
                 cmdJson.list.splice(_index,1);
-                fs.writeFile('file_data/'+fileName, JSON.stringify(cmdJson, null, 4), function (err) {
+                fs.writeFile('file_data/'+fileName+".json", JSON.stringify(cmdJson, null, 4), function (err) {
                     if (err) throw err;
                 });
                 htmlDom(cmdJson)
@@ -322,7 +326,87 @@
             }
             });
 
+    })
+
+    //删除项目
+    $("#deletejson_btn").click(function(){
+
+        var index=layer.open({
+            type: 1
+            ,title: false //不显示标题栏
+            ,closeBtn: false
+            ,area: '300px;'
+            ,shade: 0.8
+            ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+            ,btn: ['确认删除', '取消']
+            ,moveType: 1 //拖拽模式，0或者1
+            ,content: '<div style="padding: 20px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">您确认要删除这个项目吗？（如果您是该项目的作者，线上仓库将同步删除，且不可恢复）</div>'
+            ,success: function(layero){
+                var btn = layero.find('.layui-layer-btn');
+                btn.css('text-align', 'center');
+                btn.find('.layui-layer-btn0').attr({
+                    target: '_blank',
+                    target: '_blank'
+                });
+            }
+            ,yes: function(index, layero){
+                layer.close(index)
+                fs.unlink('file_data/'+fileName+".json", function(err){
+                    if(err){
+                        layer.msg('删除失败！');
+                    }else{
+                        layer.msg('删除成功！');
+                        $.ajax({
+                            url: _url+"/delete_code",
+                            data: {
+                                "json_name": cmdJson.name,
+                            },
+                            type: "get",
+                            dataType: "json",
+                            async: true,
+                            success: function (data) {
+                                console.log(data)
+                                location.reload()
+                            }
+                        })
+                    }
+                });
+            }
+        });
+
+
+
+
 
     })
+
+    //更新项目到线上仓库
+    $(document).on("click","#commitjson_btn",function(){
+        console.log(cmdJson)
+         $.ajax({
+         url: _url+"/save_code",
+         data: {
+         "json_name": cmdJson.name,
+         "json_code": JSON.stringify(cmdJson, null, 4)
+         },
+         type: "post",
+         dataType: "json",
+         async: false,
+         success: function (data) {
+         console.log(data)
+         if(data.state=="success"){
+         layer.msg('更新成功！');
+         }else if(data.state=="error1"){
+         layer.msg('请先登录！');
+         }else if(data.state=="error2"){
+             layer.msg('你发布的代码的名称已经存在！如果您是这个代码的首次发布者，请登录您的正确账号！');
+         }
+         }
+         })
+    })
+
+    function removeLastOne(str){
+        return str.substring(0,str.length - 5);
+    }
 
 }

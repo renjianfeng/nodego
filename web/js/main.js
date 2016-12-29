@@ -3,6 +3,8 @@
  */
 !(function(){
     var fileName="";
+    var bodydom=$(".cention")
+    var _url="http://127.0.0.1:8100"
     fs.readdir('file_data', function (err, files) {
         if (err) {
             console.log('读取目录失败')
@@ -15,8 +17,11 @@
             //根据时间从最新到最旧排序
             return stat2.mtime - stat1.mtime;
         });
-        fileName=files[0];
+        fileName=removeLastOne(files[0]);
         dom(fileName)
         web(fileName)
     })
+    function removeLastOne(str){
+        return str.substring(0,str.length - 5);
+    }
 })()

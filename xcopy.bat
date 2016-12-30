@@ -1,5 +1,9 @@
 chcp 65001
  cd \ 
 F:
-cd web-view\testnode
-阿斯达四
+cd web-view\node_service
+
+
+node app.js
+
+

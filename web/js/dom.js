@@ -207,11 +207,11 @@
         }
         fs.writeFile('file_data/'+filename+".json", JSON.stringify(newcmdJson, null, 4), function (err) {
             if (err) throw err;
+            $("#add_file").removeClass("code-showbody");
+            bodydom.removeClass("add-code-bg");
+            navlist()
+            layer.msg('创建成功！');
         });
-        $("#add_file").removeClass("code-showbody");
-        bodydom.removeClass("add-code-bg");
-        navlist()
-        layer.msg('创建成功！');
     })
 
 
@@ -220,8 +220,7 @@
         $(this).parent().find("li").removeClass("check-li")
         $(this).addClass("check-li")
         fileName=$(this).html();
-        try    {
-
+        try {
             var fileThis="file_data/"+fileName+".json";
             cmdJson=fs.readFileSync(fileThis);
             cmdJson=JSON.parse(cmdJson)
@@ -283,12 +282,17 @@
         $("#edit_json").removeClass("code-showbody");
         bodydom.removeClass("add-code-bg");
         var newJson=$("#edit_jsontext").val()
-        cmdJson=JSON.parse(newJson)
-        fs.writeFile('file_data/'+fileName+".json", JSON.stringify(cmdJson, null, 4), function (err) {
-            if (err) throw err;
-        });
-        htmlDom(cmdJson);
-        layer.msg('保存成功！');
+        try {
+            cmdJson=JSON.parse(newJson)
+            fs.writeFile('file_data/'+cmdJson.name+".json", JSON.stringify(cmdJson, null, 4), function (err) {
+                if (err) throw err;
+                htmlDom(cmdJson);
+                navlist()
+                layer.msg('保存成功！');
+            });
+        }   catch  (e)   {
+            layer.msg('JSON文件编译出错！');
+        }
     })
 
 

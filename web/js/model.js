@@ -79,10 +79,10 @@ function nodeGo(cmdstr1){
 
 //遍历执行页面
 function htmlDom(cmdJson){
-    $(".showfileDialog").html(cmdJson.fileaddress)
+    $(".showfileDialog").html(escape2Html(cmdJson.fileaddress))
     var strVar = "";
-    strVar += " <h4 class=\"title-h4\">"+cmdJson.name+"<\/h4>";
-    strVar += "                <h5>"+cmdJson.description+"<\/h5>";
+    strVar += " <h4 class=\"title-h4\">"+escape2Html(cmdJson.name)+"<\/h4>";
+    strVar += "                <h5>"+escape2Html(cmdJson.description)+"<\/h5>";
     strVar += "                <div>";
     for(var i=0;i<cmdJson.list.length;i++){
         strVar += "                <div class=\"code-list\">";
@@ -90,8 +90,8 @@ function htmlDom(cmdJson){
         strVar += "               <button class=\"edit-code-btn edit_code_do\">编辑<\/button>";
         strVar += "               <button class=\"save-code-btn delete-code-list\">删除<\/button>";
         strVar += "                    <\/div>";
-        strVar += "                    <h5>"+cmdJson.list[i].titleh1+"<\/h5>";
-        strVar += "                    <h6>"+cmdJson.list[i].titleh2+"<\/h6>";
+        strVar += "                    <h5>"+escape2Html(cmdJson.list[i].titleh1)+"<\/h5>";
+        strVar += "                    <h6>"+escape2Html(cmdJson.list[i].titleh2)+"<\/h6>";
         strVar += "                    <div class=\"row-cell\">";
         strVar += "                        <div class=\"col-ela\">";
         strVar += "                            <textarea class=\"nodecode\" placeholder=\"着这里输入控制台命令!\">"+cmdJson.list[i].cmdcode+"<\/textarea>";
@@ -130,4 +130,16 @@ function shelldocall(cmdstr1){
         if (err) throw err;
         shell.openItem('copy.bat');
     });
+}
+function escape2Html(str) {
+    var s = "";
+    if (str.length == 0) return "";
+    s = str.replace(/&/g, "&gt;");
+    s = s.replace(/</g, "&lt;");
+    s = s.replace(/>/g, "&gt;");
+    s = s.replace(/ /g, "&nbsp;");
+    s = s.replace(/\'/g, "&#39;");
+    s = s.replace(/\"/g, "&quot;");
+    s = s.replace(/\n/g, "<br>");
+    return s;
 }

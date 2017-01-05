@@ -1,25 +1,55 @@
 {
     "name": "React+ES6+Webpack生成环境搭建",
-    "description": "介绍",
+    "description": "本例方法利用yeoman快速搭建React+webpack+es6脚手架由实践总结",
     "fileaddress": "F:\\web-view\\testnode",
     "list": [
         {
-            "titleh1": "阿斯达四大",
-            "titleh2": "阿斯达四大",
-            "cmdcode": "阿斯达四",
-            "cmddo": "1"
+            "titleh1": "修改npm源为淘宝源",
+            "titleh2": "加快npm下载速度，不这样做的话npm install会卡很久。",
+            "cmdcode": "npm config set registry \"https://registry.npm.taobao.org\"",
+            "cmddo": "3"
         },
         {
-            "titleh1": "阿斯达四大dddd",
-            "titleh2": "发货个哈哈",
-            "cmdcode": "水电费水电费",
-            "cmddo": "1"
+            "titleh1": "安装脚手架",
+            "titleh2": "首先确保自己安装了nodejs，然后全局安装yeoman",
+            "cmdcode": "npm install -g yo",
+            "cmddo": "3"
         },
         {
-            "titleh1": "阿斯达四大",
-            "titleh2": "阿斯达四大",
-            "cmdcode": "阿斯达四大",
-            "cmddo": "2"
+            "titleh1": "然后直接安装脚手架",
+            "titleh2": "",
+            "cmdcode": "npm install -g generator-reactpackage",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "创建React项目",
+            "titleh2": "在合适的地方新建一个文件夹，在文件夹下运行：",
+            "cmdcode": "yo reactpackage",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "然后就会在此目录下生成以下目录结构",
+            "titleh2": "├── data\n│ └── test.json\n├── src\n│ ├── components\n│ │ └── App.js\n│ ├── images\n│ │ └── yeoman.png\n│ ├── styles\n│ │ └── app.scss\n│ ├── vendor\n│ │ └── jquery.js\n│ ├── views\n│ │ └── home.html\n├── node_modules\n├── index.html\n├── package.json\n└── webpack.config.js",
+            "cmdcode": "没有命令  不需要执行！",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "调试打包React项目",
+            "titleh2": "项目开发过程使用，启动服务，实时刷新",
+            "cmdcode": "npm run dev \n",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "调试打包React项目",
+            "titleh2": "开发完成之后打包文件（js、css分开打包）",
+            "cmdcode": "npm run build ",
+            "cmddo": "3"
+        },
+        {
+            "titleh1": "测试预览项目",
+            "titleh2": "本项目默认监听端口是8888，所以在浏览器输入 http://localhost:8888，或者index.html->右键打开方式->chrome 就能看到效果了\n如果执行上述命令提示错误：Error: getaddrinfo ENOTFOUND localhost，在host文件里面添加127.0.0.1 localhost即可\n监听端口和实时刷新的功能都能在webpack.config.js文件中修改配置",
+            "cmdcode": "没有命令  不需要执行！",
+            "cmddo": "3"
         }
     ]
 }

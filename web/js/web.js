@@ -3,7 +3,7 @@
  */
 function web(fileName){
     var bodydom=$(".cention")
-    var _url="http://127.0.0.1:8100"
+    var _url="http://www.xidayun.com:21000"
     ajaxUser()
     $("#index_search").click(function(){
         $("#search_json").addClass("code-showbody");

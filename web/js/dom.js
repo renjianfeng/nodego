@@ -3,7 +3,7 @@
  */
 
     function dom(fileName){
-    var _url="http://127.0.0.1:8100"
+    var _url="http://www.xidayun.com:21000"
     var bodydom=$(".cention")
     var cmdJson;
     try {

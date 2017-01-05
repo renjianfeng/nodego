@@ -4,7 +4,7 @@
 !(function(){
     var fileName="";
     var bodydom=$(".cention")
-    var _url="http://127.0.0.1:8100"
+    var _url="http://www.xidayun.com:21000"
     fs.readdir('file_data', function (err, files) {
         if (err) {
             console.log('读取目录失败')
